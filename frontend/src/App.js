@@ -9,6 +9,7 @@ import ArticlesList from './pages/ArticlesList';
 import ArticlePage from './pages/ArticlePage';
 import NavBar from './NavBar';
 import './App.css';
+import FootBar from './FootBar';
 
 class App extends Component {
   render() {
@@ -20,23 +21,9 @@ class App extends Component {
             <Route path="/" component={HomePage} exact />
             <Route path="/about" component={AboutPage} />
             <Route path="/articles-list" component={ArticlesList} />
-            <Route path="/article" component={ArticlePage} />
+            <Route path="/article/:name" component={ArticlePage} />
           </div>
-          <footer >
-      <div class="collapse bg-dark" id="navbarFooter">
-      <div class="container">
-        <div class="row">        
-          <div class="col-sm-8 col-md-7 py-4">
-          </div>        
-        </div>
-      </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-      <div class="container d-flex justify-content-between">
-          <h6 class="lead text-muted">Abrar Zahin</h6>
-      </div>
-    </div>
-</footer>
+         <FootBar/>
         </div>
       </Router>
     );
