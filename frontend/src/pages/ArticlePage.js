@@ -7,11 +7,11 @@ const ArticlePage = ({ match }) => {
     const name = match.params.name;
     const article = articleContent.find(article => article.name === name);
 
-    const [articleInfo, setarticleInfo] = useState({ upvotes:0,comments:[]});
+    const [articleInfo, setArticleInfo] = useState({ upvotes:0,comments:[]});
 
-    useEffect(()=>{
-        setarticleInfo({upvotes:3});
-    });
+    useEffect(() => {
+        setArticleInfo({ upvotes: Math.ceil(Math.random() * 10) });
+    }, [name]);
 
     if (!article) return <NotFoundPage/>
 
